@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} {% endblock %} - BBTCorp</title>
+        <style>
+            nav {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li {
+                float: left;
+            }
+
+            nav a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                /*color: #d64161;
+                font-size: 3em;
+                margin-left: 50px;*/
+                text-decoration: none;
+            }
+            li a:hover {
+                background-color: #111;
+            }  
+            
+            .content {
+               text-align: center; 
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <li><a class="active" href="{{ url_for('home')}}">Home</a></li>
+            <li><a href="{{ url_for('news')}}">New</a></li>
+            <li><a href="{{ url_for('contact')}}">Contact</a></li>
+            <li><a href="{{ url_for('about')}}">About</a></li>
+        </nav>
+        <hr>
+        <div class="content">
+            {% block content %} {% endblock %}
+        </div>
+    </body>
+
+</html>
